@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submit Invitation code</title>
+    <link rel="icon" href="/icons/siteicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body class="text-white bg-dark">
+
+    <div id="main" class="container-fluid mt-1 mb-1">
+        <hr>
+        <div id="compayTitle" class="text-center">
+            <div class="display-3">Render Earn BD</div>
+        </div>
+        <hr>
+
+        <form action="/invCodeComplete" method="post">
+            <input type="text" minlength="5" required>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-success">Submit Invitation code</button>
+        </form>
+        <div class="text-center mt-1">
+            <a href="/" class="btn btn-info mt-2 w-75">Go to Home</a>
+        </div>
+
+
+        <footer class="text-center mt-5">
+            <small><strong>Renderearn™ BD © 2023</strong></small>
+        </footer>
+
+    </div>
+
+    <div id="notMobile" style="display: none;" class=" m-2 display-1">
+        Sorry you can only work with mobile phone in our site
+    </div>
+
+    <script>
+
+        if (Number(window.innerWidth) > 500) {
+            // not mobile screen
+            document.getElementById("main").style.display = "none";
+            document.getElementById("notMobile").style.display = "block";
+        }
+        else {
+            document.getElementById("main").style.display = "block";
+            document.getElementById("notMobile").style.display = "none";
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icons/siteicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Home page</title>
+</head>
+
+<body class="bg-dark text-white">
+
+    <div id="main" class="container-fluid">
+
+        <hr>
+        <div id="compayTitle" class="text-center">
+            <div class="display-3">Render Earn BD</div>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <span class="btn btn-outline-light" style="font-size: 18px;font-weight: bold;" value="">
+                            Balance : <span id="balance"><%= balance %></span> <span
+                                class="bi bi-cash-stack text-warning h3"></span></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <a href="/refer">
+                            <span class="btn btn-outline-light" style="font-size: 18px;font-weight: bold;" value="">
+                                <span class="bi bi-share text-primary h3"></span> Refer Friends (0)
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="text-center">
+                        <a href="/withdraw">
+                            <span class="btn btn-outline-light" style="font-size: 18px;font-weight: bold;" value="">
+                                Withdraw money <span class="bi bi-cash text-success h4">
+                                </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <span id="logOut" class="btn btn-outline-light" style="font-size: 18px;font-weight: bold;">
+                            Log out <span class="bi bi-circle text-danger h4"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="text-center">
+                        <a href="/rules" class="btn btn-outline-light" style="font-size: 18; font-weight: bold;">Read Rules how to
+                            work <span class="bi bi-book text-info h4"></span> </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <a href="/subInv" class="btn btn-outline-light" style="font-size: 18; font-weight: bold;">Submit invitation code <span class="bi bi-person text-info h3"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+
+        <div class="text-center">
+            <a href="/earnVideo" class="btn btn btn-outline-light mt-1"><span class="bi bi-youtube text-success h3"><span
+                        class="text-white"> Earn by watching video</span></span></a>
+        </div>
+
+        <div class="text-center">
+            <a href="/completeTask" class="btn btn btn-outline-light mt-3"><span class="bi bi-hammer text-warning h3"><span
+                        class="text-white"> Earn by completing small tasks</span></span></a>
+        </div>
+
+        <div class="text-center">
+            <a href="/watchAds" class="btn btn btn-outline-light mt-3"><span class="bi bi-eye text-info h3"><span
+                        class="text-white"> Earn by watching ads</span></span></a>
+        </div>
+
+        <footer class="text-center mt-5">
+            <small><strong>Renderearn™ BD © 2023</strong></small>
+        </footer>
+
+    </div>
+
+
+
+    <div id="notMobile" style="display: none;" class=" m-2 display-1">
+        Sorry you can only work with mobile phone in our site
+    </div>
+
+    <script>
+        // device width check
+        if (Number(window.innerWidth) > 500) {
+            // not mobile screen
+            document.getElementById("main").style.display = "none";
+            document.getElementById("notMobile").style.display = "block";
+        }
+        else {
+            document.getElementById("main").style.display = "block";
+            document.getElementById("notMobile").style.display = "none";
+        }
+
+        // balance
+        // let balance = document.getElementById("balance");
+        // balance.innerText = 0;
+
+
+        // logout
+        let btnLogout = document.getElementById("logOut");
+        btnLogout.addEventListener("click", () => {
+            document.cookie = "loggedIn=false";
+            window.location.reload();
+        });
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
