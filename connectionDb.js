@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 
 // remote mongodb connect
 const connect = () => {
+    mongoose.set('strictQuery', false);
     mongoose.connect("mongodb+srv://etaipassword:etaipassword@feedbackdb.d8kfkvp.mongodb.net/?retryWrites=true&w=majority").then(() => { console.log("DB connection successful"); }).catch(() => { console.log("Db failed to Connect"); });
 }
 
