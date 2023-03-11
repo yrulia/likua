@@ -126,7 +126,7 @@ Router.get("/completeTask", (req, res) => {
 });
 
 Router.get("/watchAds", (req, res) => {
-    if (Number(req.cookies.balance) >= 481) {
+    if (Number(req.cookies.balance) >= 451) {
         res.render("e/noads");
     }
     else{
